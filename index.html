@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TTP coding challlenge 2</title>
+</head>
+
+<body>
+    <h1>
+        Hi my name is Haseeb Khan and my favorite hobby is tied between origami and reading.
+        <p>The current time is: </p> <p id=change-time> </p>
+    </h1>
+
+    <script>
+        setInterval(function() {
+            var today = new Date();
+            var hours = today.getHours().toString();
+            var minutes = today.getMinutes().toString();
+            var seconds = today.getSeconds().toString();
+            // I didn't know if you wanted by 00:00:00 format always but these if statements take care of that
+            if(today.getHours() <= 9)
+                hours = "0" + today.getHours().toString();
+            if(today.getMinutes() <= 9)
+                minutes = "0" + today.getMinutes().toString();
+            if(today.getSeconds() <= 9)
+                seconds = "0" + today.getSeconds().toString();  
+            var time = hours + ":" + minutes + ":" + seconds;
+            document.getElementById("change-time").innerHTML = time;
+            // Time is in milliseconds so 1000 milliseconds is a second
+        }, 1000);
+
+    </script>
+</body>
+
+</html>
