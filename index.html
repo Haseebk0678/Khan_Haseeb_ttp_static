@@ -15,7 +15,8 @@
     </h1>
 
     <script>
-        setInterval(function() {
+        setInterval(getTime,0, 1000);
+        function getTime() {
             var today = new Date();
             var hours = today.getHours().toString();
             var minutes = today.getMinutes().toString();
@@ -30,8 +31,7 @@
             var time = hours + ":" + minutes + ":" + seconds;
             document.getElementById("change-time").innerHTML = time;
             // Time is in milliseconds so 1000 milliseconds is a second
-        }, 1000);
-
+        };
     </script>
 </body>
 
