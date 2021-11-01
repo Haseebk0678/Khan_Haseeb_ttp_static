@@ -20,8 +20,8 @@
         function getTime() {
             var today = new Date();
             var hours = today.getHours();
-            var minutes = today.getMinutes().toString();
-            var seconds = today.getSeconds().toString();
+            var minutes = today.getMinutes();
+            var seconds = today.getSeconds();
             // Puts it in twelve hour format
             if(hours > 12){
                 hours -= 12;
