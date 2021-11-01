@@ -19,7 +19,7 @@
         // This function checks the time that it currently is in and puts it in 12 hour format
         function getTime() {
             var today = new Date();
-            var hours = 0;
+            var hours = today.getHours();
             var minutes = today.getMinutes().toString();
             var seconds = today.getSeconds().toString();
             // Puts it in twelve hour format
