@@ -16,17 +16,22 @@
 
     <script>
         setInterval(getTime,0, 1000);
+        // This function checks the time that it currently is in and puts it in 12 hour format
         function getTime() {
             var today = new Date();
-            var hours = today.getHours().toString();
+            var hours = today.getHours();
             var minutes = today.getMinutes().toString();
             var seconds = today.getSeconds().toString();
+            // Puts it in twelve hour format
+            if(hours >= 12){
+                hours -= 12;
+            }
             // I didn't know if you wanted by 00:00:00 format always but these if statements take care of that
-            if(today.getHours() <= 9)
-                hours = "0" + today.getHours().toString();
-            if(today.getMinutes() <= 9)
+            if(hours <= 9)
+                hours = "0" + hours.toString();
+            if(minutes <= 9)
                 minutes = "0" + today.getMinutes().toString();
-            if(today.getSeconds() <= 9)
+            if(seconds <= 9)
                 seconds = "0" + today.getSeconds().toString();  
             var time = hours + ":" + minutes + ":" + seconds;
             document.getElementById("change-time").innerHTML = time;
