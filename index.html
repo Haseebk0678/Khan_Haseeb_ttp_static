@@ -19,13 +19,17 @@
         // This function checks the time that it currently is in and puts it in 12 hour format
         function getTime() {
             var today = new Date();
-            var hours = today.getHours();
+            var hours = 0;
             var minutes = today.getMinutes().toString();
             var seconds = today.getSeconds().toString();
             // Puts it in twelve hour format
             if(hours > 12){
                 hours -= 12;
             }
+            // if it's the 0th hour we add 12 to the time;
+            if(hours == 0)[
+                hours = 12
+            ]
             // I didn't know if you wanted by 00:00:00 format always but these if statements take care of that
             if(hours <= 9)
                 hours = "0" + hours.toString();
